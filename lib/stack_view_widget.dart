@@ -1,7 +1,11 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'stack_data.dart';
 
 class StackViewWidget extends StatefulWidget {
+  const StackViewWidget({super.key});
+
   @override
   _StackViewWidgetState createState() => _StackViewWidgetState();
 }
@@ -36,7 +40,7 @@ class _StackViewWidgetState extends State<StackViewWidget> {
             toggleItemState(index);
           },
           child: AnimatedContainer(
-            duration: Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 500),
             curve: Curves.easeInOut,
             decoration: BoxDecoration(
               color: item.isExpanded ? Colors.blue : Colors.white,
@@ -46,11 +50,11 @@ class _StackViewWidgetState extends State<StackViewWidget> {
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 2,
                   blurRadius: 5,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
-            margin: EdgeInsets.all(8.0),
+            margin: const EdgeInsets.all(8.0),
             child: Column(
               children: [
                 ListTile(
@@ -64,10 +68,10 @@ class _StackViewWidgetState extends State<StackViewWidget> {
                 ),
                 if (item.isExpanded)
                   Padding(
-                    padding: EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: Text(
                       item.content,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
               ],
